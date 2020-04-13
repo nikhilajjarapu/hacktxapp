@@ -24,14 +24,14 @@ export function foodScreen() {
       />
 
       <TouchableOpacity
-        onPress={() => setTextEditable('false')}
+        onPress={() => setTextEditable(false)}
         style={{ backgroundColor: '#01cdfe', margin: 20, padding: 20, marginRight:130, marginLeft:120 }}>
           <Text style={{ fontSize: 20, color: '#fffb96', fontFamily:'System' }}> submit name </Text>
       </TouchableOpacity>
 
       <View style={{marginTop: 20, justifyContent: 'center', alignItems: 'center' }}>
         <QRCode
-          content={value ? value : "invalid name"}
+          content={value ? value + "_food" : "invalid name"}
           />
       </View>
 
