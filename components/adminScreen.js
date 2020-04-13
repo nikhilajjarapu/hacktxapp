@@ -15,7 +15,28 @@ export function adminScreen() {
 
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
-    alert("you cannot say pop and forget the smoke");
+
+    console.log(data)
+
+    const requestOptions = {
+        method: 'POST',
+        headers: {'arg1': data },
+        queryParams: JSON.stringify({ arg1: data })
+    };
+
+    fetch('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/hacktxapp-dufgi/service/get_user/incoming_webhook/webhook0?arg1='+data, requestOptions)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+
+          if (data != null){
+            alert("Accepted")
+          }else{
+            alert("Rejected Invalid")
+          }
+
+        }
+      );
   };
   if (hasPermission === null) {
     return <Text>Requesting for camera permission</Text>;

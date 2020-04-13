@@ -23,7 +23,8 @@
     "react-native-screens": "~2.2.0",
     "react-native-svg": "11.0.1",
     "react-native-web": "~0.11.7",
-    "react-navigation": "^4.3.7"
+    "react-navigation": "^4.3.7",
+    "mongodb-stitch-react-native-sdk": "^4.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
